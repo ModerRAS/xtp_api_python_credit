@@ -21,6 +21,8 @@ jobs:
       run: tar -zxvf Python-3.6.10.tgz
     - name: b3 p
       run: cd Python-3.6.10
+    - name: b3 p
+      run: chmod +x configure
     - name: b4 p
       run: ./configure --prefix=/usr/local/python3
     - name: b5 p
