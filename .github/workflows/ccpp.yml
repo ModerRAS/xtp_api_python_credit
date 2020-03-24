@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: init system
-      run: apt update -y && apt upgrade -y && apt install wget
+      run: sudo apt update -y && sudo apt upgrade -y && sudo apt install wget
     - name: build python
       run: wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tgz && \
            tar -zxvf Python-3.6.10.tgz && \
