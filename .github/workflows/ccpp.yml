@@ -18,20 +18,30 @@ jobs:
     - name: build python
       run: wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tgz
     - name: b2 p
-      run: tar -zxvf Python-3.6.10.tgz && \
-           cd Python-3.6.10 && \
-           ./configure --prefix=/usr/local/python3 && \
-           make -j && \
-           make install && \
-           ln -s /usr/local/python3/bin/python3 /usr/bin/python
+      run: tar -zxvf Python-3.6.10.tgz
+    - name: b3 p
+      run: cd Python-3.6.10
+    - name: b4 p
+      run: ./configure --prefix=/usr/local/python3
+    - name: b5 p
+      run: make -j
+    - name: b6 p
+      run: make install
+    - name: b7 p
+      run: ln -s /usr/local/python3/bin/python3 /usr/bin/python
     - name: build boost
-      run: wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz && \
-           tar -zxvf boost_1_66_0.tar.gz && \
-           cd boost_1_66_0 && \
-           ./bootstrap.sh --with-python=/usr/local/python3 && \
-           ./b2 --toolset=gcc-4.8.5  --with-python include="/usr/local/python3/include/python3.6m/" --with-thread --with-date_time  --with-chrono && \
-           ls -alh stage
+      run: wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
+    - name: build boost
+      run: tar -zxvf boost_1_66_0.tar.gz
+    - name: build boost
+      run: cd boost_1_66_0
+    - name: build boost
+      run: ./bootstrap.sh --with-python=/usr/local/python3
+    - name: build boost
+      run: ./b2 --toolset=gcc-4.8.5  --with-python include="/usr/local/python3/include/python3.6m/" --with-thread --with-date_time  --with-chrono
+    - name: build boost
+      run: ls -alh stage
     - name: build xtp
-      run: cd xtp_api_python_credit/source/Linux/xtp_python3_2.2.15.1/ && \
+      run: cd xtp_api_python_credit/source/Linux/xtp_python3_2.2.15.1/
            bash build.sh
   
