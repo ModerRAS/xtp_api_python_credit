@@ -32,8 +32,6 @@ jobs:
     - name: b6 p
       run: sudo make install
       working-directory: Python-3.6.10
-    - name: b7 p
-      run: sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python
     - name: build boost
       run: wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
     - name: build boost
