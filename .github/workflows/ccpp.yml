@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: pwd
+      run: pwd
     - name: init system
       run: sudo apt update -y && sudo apt install wget build-essential tar
     - name: build python
