@@ -22,7 +22,7 @@ jobs:
     - name: b3 p
       run: cd Python-3.6.10
     - name: b3 p
-      run: chmod +x configure
+      run: ls -alh
     - name: b4 p
       run: ./configure --prefix=/usr/local/python3
     - name: b5 p
