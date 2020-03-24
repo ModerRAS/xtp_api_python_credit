@@ -51,8 +51,8 @@ jobs:
       working-directory: boost_1_66_0
     - name: prebuild xtp
       run: mkdir build
-      working-directory: xtp_api_python_credit/source/Linux/xtp_python3_2.2.15.1/
+      working-directory: source/Linux/xtp_python3_2.2.15.1/
     - name: build xtp
       run: bash ../build.sh
-      working-directory: xtp_api_python_credit/source/Linux/xtp_python3_2.2.15.1/
+      working-directory: source/Linux/xtp_python3_2.2.15.1/
   
