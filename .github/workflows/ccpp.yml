@@ -47,7 +47,7 @@ jobs:
       run: ./b2 --toolset=gcc-7  --with-python include="/usr/local/python3/include/python3.6m/" --build-type=stage --with-thread --with-date_time  --with-chrono
       working-directory: boost_1_66_0
     - name: build boost
-      run: ls -alh stage
+      run: ls -alh stage/lib
       working-directory: boost_1_66_0
     - name: prebuild xtp
       run: mkdir build
