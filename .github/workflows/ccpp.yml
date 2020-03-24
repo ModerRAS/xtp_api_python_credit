@@ -13,6 +13,23 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: init system
+      run: apt update -y && apt upgrade -y && apt install wget
+    - name: build python
+      run: wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tgz && \
+           tar -zxvf Python-3.6.10.tgz && \
+           cd Python-3.6.10 && \
+           ./configure --prefix=/usr/local/python3 && \
+           make -j && \
+           make install && \
+           ln -s /usr/local/python3/bin/python3 /usr/bin/python
+    - name: build boost
+      run: wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz && \
+           tar -zxvf boost_1_66_0.tar.gz && \
+           cd boost_1_66_0 && \
+           ./bootstrap.sh --with-python=/usr/local/python3 && \
+           ./b2 --toolset=gcc-4.8.5  --with-python include="/usr/local/python3/include/python3.6m/" --with-thread --with-date_time  --with-chrono && \
+           ls -alh stage
     - name: configure
       run: ./configure
     - name: make
