@@ -53,6 +53,6 @@ jobs:
       run: mkdir build
       working-directory: source/Linux/xtp_python3_2.2.15.1/
     - name: build xtp
-      run: bash ../build.sh
-      working-directory: source/Linux/xtp_python3_2.2.15.1/build
+      run: bash build.sh
+      working-directory: source/Linux/xtp_python3_2.2.15.1/
   
