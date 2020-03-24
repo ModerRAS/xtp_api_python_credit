@@ -44,7 +44,7 @@ jobs:
       run: ./bootstrap.sh --with-python=/usr/local/bin/python3 --with-python-version=3.6 --with-python-root=/usr/local/lib/python3.6
       working-directory: boost_1_66_0
     - name: build boost
-      run: ./b2 --toolset=gcc-7  --with-python include="/usr/local/python3/include/python3.6m/" --build-type=stage --with-thread --with-date_time  --with-chrono
+      run: ./b2 --toolset=gcc-7  --with-python include="/usr/local/python3/include/python3.6m/" --build-type=complete stage --with-thread --with-date_time  --with-chrono
       working-directory: boost_1_66_0
     - name: build boost
       run: ls -alh stage/lib
