@@ -25,12 +25,15 @@ jobs:
       run: ls -alh
     - name: b4 p
       run: ./configure --prefix=/usr/local/python3
+      working-directory: Python-3.6.10
     - name: b5 p
       run: make -j
+      working-directory: Python-3.6.10
     - name: b6 p
-      run: make install
+      run: sudo make install
+      working-directory: Python-3.6.10
     - name: b7 p
-      run: ln -s /usr/local/python3/bin/python3 /usr/bin/python
+      run: sudo ln -s /usr/local/python3/bin/python3 /usr/bin/python
     - name: build boost
       run: wget https://dl.bintray.com/boostorg/release/1.66.0/source/boost_1_66_0.tar.gz
     - name: build boost
@@ -39,11 +42,14 @@ jobs:
       run: cd boost_1_66_0
     - name: build boost
       run: ./bootstrap.sh --with-python=/usr/local/python3
+      working-directory: boost_1_66_0
     - name: build boost
       run: ./b2 --toolset=gcc-4.8.5  --with-python include="/usr/local/python3/include/python3.6m/" --with-thread --with-date_time  --with-chrono
+      working-directory: boost_1_66_0
     - name: build boost
       run: ls -alh stage
+      working-directory: boost_1_66_0
     - name: build xtp
-      run: cd xtp_api_python_credit/source/Linux/xtp_python3_2.2.15.1/
-           bash build.sh
+      run: bash build.sh
+      working-directory: xtp_api_python_credit/source/Linux/xtp_python3_2.2.15.1/
   
