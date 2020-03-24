@@ -75,7 +75,7 @@ elseif(UNIX)
 	set(Boost_USE_MULTITHREADED      ON)
 	set(BOOST_ROOT   /home/runner/work/xtp_api_python_credit/xtp_api_python_credit/boost_1_66_0/)
 	message(${Boost_LIBRARIES})
-	find_package(Boost 1.66.0 COMPONENTS python3 thread date_time system chrono REQUIRED) # 如果boost库没有完全编译，需要将编译的库明确地指出，否者message(${Boost_LIBRARIES})会出错
+	find_package(Boost 1.66.0 python3 thread date_time system chrono REQUIRED) # 如果boost库没有完全编译，需要将编译的库明确地指出，否者message(${Boost_LIBRARIES})会出错
 	if(Boost_FOUND)
 		include_directories(${Boost_INCLUDE_DIRS})
 	endif()
