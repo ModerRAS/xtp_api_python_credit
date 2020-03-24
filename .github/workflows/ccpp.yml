@@ -16,8 +16,9 @@ jobs:
     - name: init system
       run: sudo apt update -y && sudo apt install wget build-essential tar
     - name: build python
-      run: wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tgz && \
-           tar -zxvf Python-3.6.10.tgz && \
+      run: wget https://www.python.org/ftp/python/3.6.10/Python-3.6.10.tgz
+    - name: b2 p
+    - run: tar -zxvf Python-3.6.10.tgz && \
            cd Python-3.6.10 && \
            ./configure --prefix=/usr/local/python3 && \
            make -j && \
